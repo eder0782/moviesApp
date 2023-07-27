@@ -1,8 +1,10 @@
 import { StatusBar } from "expo-status-bar";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import { api } from "./src/services/api";
+
 import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native";
+import { api } from "../services/api";
+import CardListMovie from "../components/CardListMovie";
 
 interface Movie {
   id: number;
@@ -37,6 +39,7 @@ export default function App() {
         <FlatList
           data={discoveryMovies}
           numColumns={3}
+          removeClippedSubviews
           renderItem={(item) => (
             <View
               style={{
