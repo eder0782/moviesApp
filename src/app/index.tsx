@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { SafeAreaView } from "react-native";
 import { api } from "../services/api";
 import CardListMovie from "../components/CardListMovie";
+import { Title, ViewContainer } from "../stylesBasics";
 
 interface Movie {
   id: number;
@@ -32,50 +33,11 @@ export default function App() {
   }, []);
   return (
     <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#242A32", paddingTop: 20 }}
-    >
-      {/* <Text>Open up App.tsx to start working on your app!</Text> */}
-      {discoveryMovies ? (
-        <FlatList
-          data={discoveryMovies}
-          numColumns={3}
-          removeClippedSubviews
-          renderItem={(item) => (
-            <View
-              style={{
-                padding: 25,
-                width: "100%",
-
-                marginRight: 100,
-                marginBottom: 10,
-                backgroundColor: "gray",
-                flexDirection: "column",
-
-                // justifyContent: "space-between",
-              }}
-            >
-              <Text style={{ color: "#fff", fontSize: 18, fontWeight: "700" }}>
-                {item.item.title}
-              </Text>
-              <Text style={{ color: "#fff", fontSize: 15, fontWeight: "700" }}>
-                Nota: {item.item.vote_average}
-              </Text>
-            </View>
-          )}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={(item) => item.id.toString()}
-          contentContainerStyle={{
-            // flex: 1,
-            padding: 35,
-            paddingBottom: 100,
-          }}
-          onEndReached={() => getMovies()}
-          onEndReachedThreshold={0.5}
-        />
-      ) : (
-        <></>
-      )}
+      style={{ flex: 1, backgroundColor: "#242A32", paddingTop: 20 }}>
       <StatusBar style="light" />
+      <ViewContainer>
+        <Title>O que você quer Assistir?</Title>
+      </ViewContainer>
     </SafeAreaView>
   );
 }

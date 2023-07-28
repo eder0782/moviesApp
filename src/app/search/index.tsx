@@ -1,23 +1,17 @@
 import { Text, View } from "react-native";
+import { ViewContainer } from "../../stylesBasics";
 
 export default function Search() {
   return (
-    <View
-      style={{
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100%",
-      }}
-    >
+    <ViewContainer>
       <Text
         style={{
           fontSize: 50,
           fontWeight: "700",
           marginTop: 100,
-        }}
-      >
+        }}>
         Pesquisa
       </Text>
-    </View>
+    </ViewContainer>
   );
 }
