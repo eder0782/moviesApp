@@ -5,12 +5,7 @@ import HighMovie from "../components/HighMovie";
 
 import { api } from "../services/api";
 import CardListMovie from "../components/CardListMovie";
-import {
-  Title,
-  ViewContainer,
-  SearshInput,
-  PlacreHolderTextColor,
-} from "../stylesBasics";
+import { Title, ViewContainer, SearshInput } from "../stylesBasics";
 import { StatusBar } from "expo-status-bar";
 
 interface Movie {
@@ -41,11 +36,8 @@ export default function App() {
   return (
     <ViewContainer>
       {/* <StatusBar backgroundColor={"#242A32"} style="light" /> */}
-      <SearshInput
-        placeholder="PESQUISAR"
-        placeholderTextColor={PlacreHolderTextColor}
-      />
-      <HighMovie/>
+      <SearshInput placeholder="PESQUISAR" />
+      <HighMovie />
     </ViewContainer>
   );
 }

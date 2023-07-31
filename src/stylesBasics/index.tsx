@@ -13,7 +13,9 @@ export const Title = styled.Text`
   font-weight: bold;
 `;
 
-export const SearshInput = styled.TextInput`
+export const SearshInput = styled.TextInput.attrs((props) => ({
+  placeholderTextColor: "#67686D",
+}))`
   background-color: #3a3f47;
   margin-top: 10px;
   height: 42px;
@@ -30,9 +32,8 @@ export const SearshInput = styled.TextInput`
 export const CardMovie = styled.Image`
   height: 210px;
   width: 144px;
-  border-radius:16px;
+  border-radius: 16px;
   margin-right: 20px;
+`;
 
-`
-
-export const PlacreHolderTextColor = "#67686D";
+// export const PlacreHolderTextColor = "#67686D";

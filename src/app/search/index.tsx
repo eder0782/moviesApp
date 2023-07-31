@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import {
-  PlacreHolderTextColor,
+  // PlacreHolderTextColor,
   SearshInput,
   ViewContainer,
 } from "../../stylesBasics";
@@ -8,10 +8,7 @@ import {
 export default function Search() {
   return (
     <ViewContainer>
-      <SearshInput
-        placeholder="PESQUISAR"
-        placeholderTextColor={PlacreHolderTextColor}
-      />
+      <SearshInput placeholder="PESQUISAR" />
     </ViewContainer>
   );
 }
