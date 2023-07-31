@@ -1,11 +1,16 @@
-import { StatusBar } from "expo-status-bar";
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
 
 import { useEffect, useState } from "react";
-import { SafeAreaView } from "react-native";
+
 import { api } from "../services/api";
 import CardListMovie from "../components/CardListMovie";
-import { Title, ViewContainer } from "../stylesBasics";
+import {
+  Title,
+  ViewContainer,
+  SearshInput,
+  PlacreHolderTextColor,
+} from "../stylesBasics";
+import { StatusBar } from "expo-status-bar";
 
 interface Movie {
   id: number;
@@ -18,6 +23,7 @@ interface Movie {
 export default function App() {
   const [discoveryMovies, setDiscoveryMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
+  // const isFocused = useIsFocused();
 
   const getMovies = async () => {
     const response = await api.get("/movie/top_rated", {
@@ -32,22 +38,18 @@ export default function App() {
     getMovies();
   }, []);
   return (
-    <SafeAreaView
-      style={{ flex: 1, backgroundColor: "#242A32", paddingTop: 20 }}>
-      <StatusBar style="light" />
-      <ViewContainer>
-        <Title>O que você quer Assistir?</Title>
-      </ViewContainer>
-    </SafeAreaView>
+    <ViewContainer>
+      {/* <StatusBar backgroundColor={"#242A32"} style="light" /> */}
+      <SearshInput
+        placeholder="PESQUISAR"
+        placeholderTextColor={PlacreHolderTextColor}
+      />
+    </ViewContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
     backgroundColor: "#242A32",
-    // alignItems: "center",
-    // justifyContent: "center",
-    // paddingTop: 40,
   },
 });
