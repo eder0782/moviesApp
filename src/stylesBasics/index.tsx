@@ -27,4 +27,12 @@ export const SearshInput = styled.TextInput`
   } */
 `;
 
+export const CardMovie = styled.Image`
+  height: 210px;
+  width: 144px;
+  border-radius:16px;
+  margin-right: 20px;
+
+`
+
 export const PlacreHolderTextColor = "#67686D";

@@ -1,6 +1,7 @@
 import { StyleSheet } from "react-native";
 
 import { useEffect, useState } from "react";
+import HighMovie from "../components/HighMovie";
 
 import { api } from "../services/api";
 import CardListMovie from "../components/CardListMovie";
@@ -44,6 +45,7 @@ export default function App() {
         placeholder="PESQUISAR"
         placeholderTextColor={PlacreHolderTextColor}
       />
+      <HighMovie/>
     </ViewContainer>
   );
 }

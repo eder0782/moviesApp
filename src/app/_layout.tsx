@@ -4,33 +4,21 @@ import { SafeAreaView, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import { useState, useEffect } from "react";
-// import { StatusBar } from "react-native";
+
 
 export default function AppLayout() {
-  const [ini, setIini] = useState(false);
-  useEffect(() => {
-    setIini(true);
-  }, []);
+ 
   return (
     <SafeAreaView
-      style={{ flex: 1, justifyContent: "center", backgroundColor: "#ECF0F1" }}
-    >
-      {/* <StatusBar style="dark" /> */}
-      {ini ? (
-        <StatusBar backgroundColor={"#242A32"} style="light" />
-      ) : (
-        <StatusBar backgroundColor={"#242A32"} style="light" />
-      )}
-
-      {/* <StatusBar backgroundColor={status.bg} style={estilo}></StatusBar> */}
-
+      style={{ flex: 1, justifyContent: "center", backgroundColor: "#ECF0F1" }}>   
+   
+      <StatusBar backgroundColor={"#242A32"} style="light" />
+      
       <Tabs
         screenOptions={{
           headerStyle: {
             backgroundColor: "#242A32",
-
-            // borderColor: "red",
-            // borderWidth: 0,
+          
           },
 
           headerTitleStyle: {
