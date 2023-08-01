@@ -22,7 +22,7 @@ export const SearshInput = styled.TextInput.attrs((props) => ({
   border-radius: 16px;
   padding-left: 20px;
   padding-right: 20px;
-  color: #fff;
+  color: ${(props) => props.theme.Color.primary};
   font-size: 17px;
   /* ::placeholder {
     color: red;

@@ -3,7 +3,8 @@ import {
   // PlacreHolderTextColor,
   SearshInput,
   ViewContainer,
-} from "../../stylesBasics";
+} from "../../styles";
+import { TouchableOpacity } from "react-native";
 
 export default function Search() {
   return (

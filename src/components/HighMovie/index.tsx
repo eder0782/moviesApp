@@ -1,5 +1,5 @@
 import { ScrollView } from "react-native";
-import { CardMovie } from "../../stylesBasics";
+import { CardMovie } from "../../styles";
 import { ContainerScroll } from "./HighMovie.style";
 // import imagem from
 const imagem = "./movie-2.png";

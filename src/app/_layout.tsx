@@ -1,15 +1,17 @@
-import { Tabs, useFocusEffect } from "expo-router";
+import { Tabs, router, useFocusEffect } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
-import { SafeAreaView, Platform } from "react-native";
+import { SafeAreaView, TouchableOpacity, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import { useState, useEffect } from "react";
-import { MyTheme } from "../stylesBasics/theme";
+// import dark from "../styles/dark.theme";
 import { ThemeProvider } from "styled-components/native";
+import dark from "../styles/theme/dark";
+// import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function AppLayout() {
   return (
-    <ThemeProvider theme={MyTheme}>
+    <ThemeProvider theme={dark}>
       <SafeAreaView
         style={{
           flex: 1,
@@ -54,7 +56,18 @@ export default function AppLayout() {
             name="search/index"
             options={{
               title: "Pesquisa",
-
+              headerLeft: () => (
+                <TouchableOpacity
+                  style={{ paddingLeft: 20 }}
+                  onPress={() => router.back()}
+                >
+                  <MaterialIcons
+                    name="arrow-back-ios"
+                    size={25}
+                    color={"#fff"}
+                  />
+                </TouchableOpacity>
+              ),
               tabBarLabelStyle: {
                 fontSize: 15,
               },
@@ -71,6 +84,19 @@ export default function AppLayout() {
               tabBarLabelStyle: {
                 fontSize: 15,
               },
+              headerLeft: () => (
+                <TouchableOpacity
+                  style={{ paddingLeft: 20 }}
+                  onPress={() => router.back()}
+                >
+                  <MaterialIcons
+                    name="arrow-back-ios"
+                    size={25}
+                    color={"#fff"}
+                  />
+                </TouchableOpacity>
+              ),
+
               tabBarIcon: ({ size, color }) => (
                 <MaterialIcons name="flag" size={size} color={color} />
               ),

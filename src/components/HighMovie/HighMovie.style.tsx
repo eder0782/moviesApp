@@ -5,4 +5,6 @@ export const ContainerScroll = styled.ScrollView.attrs((props) => ({
     marginTop: 20,
   },
   horizontal: true,
-}))``;
+}))`
+  height: 250px;
+`;

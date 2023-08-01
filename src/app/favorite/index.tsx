@@ -1,5 +1,5 @@
 import { SafeAreaView, Text, View } from "react-native";
-import { ViewContainer } from "../../stylesBasics";
+import { ViewContainer } from "../../styles";
 
 export default function FavotiteMovie() {
   return (
