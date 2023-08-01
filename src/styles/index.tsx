@@ -34,6 +34,7 @@ export const CardMovie = styled.Image`
   width: 144px;
   border-radius: 16px;
   margin-right: 20px;
+  /* background-color: red; */
 `;
 
 // export const PlacreHolderTextColor = "#67686D";

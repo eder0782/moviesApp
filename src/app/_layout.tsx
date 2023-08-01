@@ -1,6 +1,6 @@
 import { Tabs, router, useFocusEffect } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
-import { SafeAreaView, TouchableOpacity, Platform } from "react-native";
+import { SafeAreaView, Text, TouchableOpacity, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import { useState, useEffect } from "react";
@@ -56,6 +56,7 @@ export default function AppLayout() {
             name="search/index"
             options={{
               title: "Pesquisa",
+              headerTitleAlign: "center",
               headerLeft: () => (
                 <TouchableOpacity
                   style={{ paddingLeft: 20 }}
@@ -81,6 +82,7 @@ export default function AppLayout() {
             name="favorite/index"
             options={{
               title: "Favoritos",
+              headerTitleAlign: "center",
               tabBarLabelStyle: {
                 fontSize: 15,
               },

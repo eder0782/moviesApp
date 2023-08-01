@@ -1,7 +1,9 @@
 import { styled } from "styled-components/native";
 
 export const Container = styled.View`
-  background-color: azure;
-  height: "300px";
-  width: "100%";
+  /* flex: 1; */
+  background-color: red;
+  height: 200px;
+  width: 100%;
+  margin-top: 30px;
 `;
