@@ -3,8 +3,8 @@ import styled from "styled-components/native";
 export const ViewContainer = styled.View`
   flex: 1;
   background-color: #242a32;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
 `;
 
 export const Title = styled.Text`
