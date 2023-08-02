@@ -42,8 +42,11 @@ export default function Home() {
         <SearshInput placeholder="PESQUISAR" />
 
         <HighMovie />
-        <MovieCategContainer />
+        <View>
+          <MovieCategContainer />
+        </View>
       </View>
+      <StatusBar backgroundColor={"#242A32"} style="light" />
     </ViewContainer>
   );
 }

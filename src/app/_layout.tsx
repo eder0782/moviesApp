@@ -19,8 +19,6 @@ export default function AppLayout() {
           backgroundColor: "#ECF0F1",
         }}
       >
-        <StatusBar backgroundColor={"#242A32"} style="light" />
-
         <Tabs
           screenOptions={{
             headerStyle: {
@@ -105,6 +103,7 @@ export default function AppLayout() {
             }}
           />
         </Tabs>
+        <StatusBar backgroundColor={"#242A32"} style="light" />
       </SafeAreaView>
     </ThemeProvider>
   );

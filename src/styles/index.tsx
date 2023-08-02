@@ -1,10 +1,14 @@
 import styled from "styled-components/native";
+import Constants from "expo-constants";
 
-export const ViewContainer = styled.View`
+export const ViewContainer = styled.SafeAreaView`
   flex: 1;
   background-color: #242a32;
   padding-left: 15px;
   padding-right: 15px;
+  /* align-items: center;
+  justify-content: center; */
+  /* padding-top: ${Constants.statusBarHeight + "px"}; */
 `;
 
 export const Title = styled.Text`
@@ -29,12 +33,7 @@ export const SearshInput = styled.TextInput.attrs((props) => ({
   } */
 `;
 
-export const CardMovie = styled.Image`
-  height: 210px;
-  width: 144px;
+export const ImageMovie = styled.Image`
   border-radius: 16px;
   margin-right: 20px;
-  /* background-color: red; */
 `;
-
-// export const PlacreHolderTextColor = "#67686D";

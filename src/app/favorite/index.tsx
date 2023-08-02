@@ -1,5 +1,6 @@
 import { SafeAreaView, Text, View } from "react-native";
 import { ViewContainer } from "../../styles";
+import { StatusBar } from "expo-status-bar";
 
 export default function FavotiteMovie() {
   return (
@@ -13,6 +14,7 @@ export default function FavotiteMovie() {
       >
         Favoritos
       </Text>
+      <StatusBar backgroundColor={"#242A32"} style="light" />
     </ViewContainer>
   );
 }

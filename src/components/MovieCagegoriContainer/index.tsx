@@ -12,20 +12,14 @@ const MovieCategContainer = () => {
   const Tab = createMaterialTopTabNavigator();
   return (
     <Container>
-      {/* <Text>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, in
-        animi perferendis, ipsam voluptates molestias corporis vitae beatae
-        autem, unde alias architecto blanditiis dolore officiis id ipsa a sequi
-        placeat!
-      </Text> */}
       <Tab.Navigator
         screenOptions={{
           tabBarStyle: {
-            backgroundColor: "#3A3F47",
+            backgroundColor: "#242A32",
           },
           tabBarLabelStyle: { fontSize: 12, color: "#fff", fontWeight: "700" },
         }}
-        sceneContainerStyle={{ backgroundColor: "#3A3F47" }}
+        sceneContainerStyle={{ backgroundColor: "#242A32" }}
       >
         <Tab.Screen
           name="nowplayng"
