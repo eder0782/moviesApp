@@ -11,7 +11,10 @@ const imagem = require("./movie-2.png");
 const CardMovie: React.FC<IProps> = ({ data, imageSize }) => {
   console.log(data.poster_path, new Date().toLocaleTimeString());
 
-  // const img = require(data.poster_path);
+  // <Image
+  //       source={{
+  //         uri: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
+  //       }}/>
   return (
     <TouchableOpacity activeOpacity={0.6} onPress={() => alert("clicou")}>
       <ImageMovie
