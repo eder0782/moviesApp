@@ -3,6 +3,8 @@ import { ImageProps, Movie } from "../../@types/types";
 import CardMovie from "../CardMovie";
 import { Container } from "./ListMovie.style";
 import { View } from "react-native";
+import { useState, useEffect } from "react";
+import { api } from "../../services/api";
 
 type IProps = {
   imageSize: ImageProps;
@@ -10,11 +12,11 @@ type IProps = {
 };
 
 const ListMovie: React.FC<IProps> = ({ data, imageSize }) => {
-  //   console.log(imageSize, "ListMovie:");
   return (
     <Container>
       <FlatList
         data={data}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={{ marginTop: 10 }}>
             <CardMovie imageSize={imageSize} data={item} />

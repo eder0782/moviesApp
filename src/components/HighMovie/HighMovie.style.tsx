@@ -1,8 +1,10 @@
 import styled from "styled-components/native";
 
 export const ContainerScroll = styled.ScrollView.attrs((props) => ({
+  showsHorizontalScrollIndicator: false,
   contentContainerStyle: {
     marginTop: 20,
+
     // backgroundColor: "blue",
     // height: 250,
   },
@@ -14,7 +16,7 @@ export const ContainerScroll = styled.ScrollView.attrs((props) => ({
 export const TextNumber = styled.Text`
   font-size: 96px;
   position: absolute;
-  left: -6px;
+  left: -15px;
   bottom: -20px;
   color: #0296e5;
   opacity: 0.6;

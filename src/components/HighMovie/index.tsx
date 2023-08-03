@@ -2,6 +2,8 @@ import { ScrollView, View, Text } from "react-native";
 import CardMovie from "../CardMovie";
 import { ContainerScroll, TextNumber } from "./HighMovie.style";
 import { ImageProps, Movie } from "../../@types/types";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 // import imagem from
 const imagem = "./movie-2.png";
 
@@ -41,11 +43,27 @@ export default function HighMovie() {
     height: 210,
     width: 144,
   };
+  const [discoveryMovies, setDiscoveryMovies] = useState<Movie[]>([]);
+  const [page, setPage] = useState(1);
+
+  const getMovies = async () => {
+    const response = await api.get("/trending/movie/day", {
+      params: {
+        page,
+      },
+    });
+    setDiscoveryMovies([...discoveryMovies, ...response.data.results]);
+    setPage(page + 1);
+  };
+  useEffect(() => {
+    getMovies();
+  }, []);
   return (
     <ContainerScroll>
-      {dados.map((item) => (
-        <View>
+      {discoveryMovies.map((item, ind) => (
+        <View key={item.id} style={{ marginLeft: 20 }}>
           <CardMovie imageSize={imageSize} data={item} />
+          <TextNumber>{ind + 1}</TextNumber>
         </View>
       ))}
     </ContainerScroll>
