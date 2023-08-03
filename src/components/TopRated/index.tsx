@@ -4,12 +4,9 @@ import { ImageProps, Movie } from "../../@types/types";
 // import { dados } from "../../services/data.teste";
 import ListMovie from "../ListMovie";
 import { api } from "../../services/api";
+import { imageSizeListMovies } from "../../styles/defaultValues";
 
 const TopRated: React.FC = () => {
-  const imageSize: ImageProps = {
-    height: 145,
-    width: 100,
-  };
   const [discoveryMovies, setDiscoveryMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const getMovies = async () => {
@@ -26,7 +23,7 @@ const TopRated: React.FC = () => {
   }, []);
   return (
     <View style={{ flex: 1 }}>
-      <ListMovie imageSize={imageSize} data={discoveryMovies} />
+      <ListMovie imageSize={imageSizeListMovies} data={discoveryMovies} />
     </View>
   );
 };

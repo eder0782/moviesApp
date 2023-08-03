@@ -1,6 +1,7 @@
 import { ImageMovie } from "../../styles";
 import { ImageProps, Movie } from "../../@types/types";
 import { TouchableOpacity } from "react-native";
+import { router } from "expo-router";
 import { memo } from "react";
 type IProps = {
   imageSize: ImageProps;

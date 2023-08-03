@@ -2,12 +2,8 @@ import { Tabs, router, useFocusEffect } from "expo-router";
 import { MaterialIcons } from "@expo/vector-icons";
 import { SafeAreaView, Text, TouchableOpacity, Platform } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { View } from "react-native";
-import { useState, useEffect } from "react";
-// import dark from "../styles/dark.theme";
 import { ThemeProvider } from "styled-components/native";
 import dark from "../styles/theme/dark";
-// import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default function AppLayout() {
   return (

@@ -17,8 +17,12 @@ const ListMovie: React.FC<IProps> = ({ data, imageSize }) => {
       <FlatList
         data={data}
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={{
+          gap: 20,
+          marginTop: 10,
+        }}
         renderItem={({ item }) => (
-          <View style={{ marginTop: 10 }}>
+          <View>
             <CardMovie imageSize={imageSize} data={item} />
           </View>
         )}

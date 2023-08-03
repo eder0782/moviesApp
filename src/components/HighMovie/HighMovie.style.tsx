@@ -18,7 +18,7 @@ export const TextNumber = styled.Text`
   position: absolute;
   left: -15px;
   bottom: -20px;
-  color: #0296e5;
+  color: #67686d;
   opacity: 0.6;
   font-weight: 700;
 `;
