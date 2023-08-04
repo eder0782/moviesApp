@@ -1,10 +1,10 @@
 import { ScrollView, View, Text } from "react-native";
 import CardMovie from "../CardMovie";
 import { ContainerScroll, TextNumber } from "./HighMovie.style";
-import { ImageProps, Movie } from "../../@types/types";
+import { ImageProps, Movie } from "../../../@types/types";
 import { useEffect, useState } from "react";
-import { api } from "../../services/api";
-import { imageSizeHighMovies } from "../../styles/defaultValues";
+import { api } from "../../../services/api";
+import { imageSizeHighMovies } from "../../../styles/defaultValues";
 
 export default function HighMovie() {
   const [discoveryMovies, setDiscoveryMovies] = useState<Movie[]>([]);

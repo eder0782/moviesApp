@@ -3,7 +3,7 @@ import {
   // PlacreHolderTextColor,
   SearshInput,
   ViewContainer,
-} from "../../styles";
+} from "../../../styles";
 import { TouchableOpacity } from "react-native";
 import { StatusBar } from "expo-status-bar";
 

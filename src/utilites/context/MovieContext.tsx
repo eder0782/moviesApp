@@ -1,28 +1,28 @@
 import { createContext, FC, useState } from "react";
 import { Movie } from "../../@types/types";
 
-type FinancialRecordsContextType = {
-  movies: Movie[];
-  setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
+type MovieContextType = {
+  movie: Movie;
+  setMovie: React.Dispatch<React.SetStateAction<Movie>>;
 };
 
-const FinancialRecordsContext = createContext<FinancialRecordsContextType>({
-  movies: [] as Movie[],
-  setMovies: () => {},
+const MovieContext = createContext<MovieContextType>({
+  movie: {} as Movie,
+  setMovie: () => {},
 });
 
-interface IMoviesProvider {
+interface IMovieProvider {
   children: JSX.Element;
 }
 
-const FinancialRecordsProvider: FC<IMoviesProvider> = ({ children }) => {
-  const [movies, setMovies] = useState<Movie[]>([] as Movie[]);
+const MovieProvider: FC<IMovieProvider> = ({ children }) => {
+  const [movie, setMovie] = useState<Movie>({} as Movie);
 
   return (
-    <FinancialRecordsContext.Provider value={{ movies, setMovies }}>
+    <MovieContext.Provider value={{ movie, setMovie }}>
       {children}
-    </FinancialRecordsContext.Provider>
+    </MovieContext.Provider>
   );
 };
 
-export { FinancialRecordsContext, FinancialRecordsProvider };
+export { MovieContext, MovieProvider };

@@ -1,11 +1,12 @@
-import { Tabs, router, useFocusEffect } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
-import { SafeAreaView, Text, TouchableOpacity, Platform } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import { ThemeProvider } from "styled-components/native";
+import { Stack, router } from "expo-router";
+import { ThemeProvider } from "styled-components";
 import dark from "../styles/theme/dark";
+import { StatusBar } from "expo-status-bar";
+import { SafeAreaView, TouchableOpacity } from "react-native";
+import { MaterialIcons } from "@expo/vector-icons";
+import { MovieProvider } from "../utilites/context/MovieContext";
 
-export default function AppLayout() {
+export default function RootLayout() {
   return (
     <ThemeProvider theme={dark}>
       <SafeAreaView
@@ -15,92 +16,14 @@ export default function AppLayout() {
           backgroundColor: "#ECF0F1",
         }}
       >
-        <Tabs
-          screenOptions={{
-            headerStyle: {
-              backgroundColor: "#242A32",
-            },
-
-            headerTitleStyle: {
-              color: "#fff",
-            },
-            tabBarStyle: {
-              backgroundColor: "#242A32",
-              borderTopColor: "#0296E5",
-            },
-            tabBarActiveTintColor: "#0296E5",
-            tabBarInactiveTintColor: "#67686D",
-          }}
-        >
-          <Tabs.Screen
-            name="index"
-            options={{
-              title: "Inicio",
-              headerTitle: "O que você quer assistir hoje?",
-              tabBarLabelStyle: {
-                fontSize: 15,
-              },
-
-              tabBarIcon: ({ size, color }) => (
-                <MaterialIcons name="home" size={size} color={color} />
-              ),
-            }}
-          />
-          <Tabs.Screen
-            name="search/index"
-            options={{
-              title: "Pesquisa",
-              headerTitleAlign: "center",
-              headerLeft: () => (
-                <TouchableOpacity
-                  style={{ paddingLeft: 20 }}
-                  onPress={() => router.back()}
-                >
-                  <MaterialIcons
-                    name="arrow-back-ios"
-                    size={25}
-                    color={"#fff"}
-                  />
-                </TouchableOpacity>
-              ),
-              tabBarLabelStyle: {
-                fontSize: 15,
-              },
-              tabBarIcon: ({ size, color }) => (
-                <MaterialIcons name="search" size={size} color={color} />
-              ),
-            }}
-          />
-
-          <Tabs.Screen
-            name="favorite/index"
-            options={{
-              title: "Favoritos",
-              headerTitleAlign: "center",
-              tabBarLabelStyle: {
-                fontSize: 15,
-              },
-              headerLeft: () => (
-                <TouchableOpacity
-                  style={{ paddingLeft: 20 }}
-                  onPress={() => router.back()}
-                >
-                  <MaterialIcons
-                    name="arrow-back-ios"
-                    size={25}
-                    color={"#fff"}
-                  />
-                </TouchableOpacity>
-              ),
-
-              tabBarIcon: ({ size, color }) => (
-                <MaterialIcons name="flag" size={size} color={color} />
-              ),
-            }}
-          />
-        </Tabs>
-        <StatusBar backgroundColor={"#242A32"} style="light" />
+        <MovieProvider>
+          <Stack initialRouteName="(tabs)">
+            <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack.Screen name="details" options={{ headerShown: false }} />
+          </Stack>
+        </MovieProvider>
       </SafeAreaView>
+      <StatusBar backgroundColor={"#242A32"} style="light" />
     </ThemeProvider>
   );
 }

@@ -1,17 +1,27 @@
-import { ImageMovie } from "../../styles";
-import { ImageProps, Movie } from "../../@types/types";
+import { ImageMovie } from "../../../styles";
+import { ImageProps, Movie } from "../../../@types/types";
 import { TouchableOpacity } from "react-native";
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 import { memo } from "react";
+import { useContext } from "react";
+import { MovieContext } from "../../../utilites/context/MovieContext";
+
 type IProps = {
   imageSize: ImageProps;
   data: Movie;
 };
 
-const imagem = require("./movie-2.png");
 const CardMovie: React.FC<IProps> = ({ data, imageSize }) => {
+  const route = useRouter();
+
   return (
-    <TouchableOpacity activeOpacity={0.6} onPress={() => alert("clicou")}>
+    <TouchableOpacity
+      activeOpacity={0.6}
+      onPress={() => {
+        // setMovie(data);
+        route.push("/details");
+      }}
+    >
       <ImageMovie
         style={{ width: imageSize.width, height: imageSize.height }}
         source={{

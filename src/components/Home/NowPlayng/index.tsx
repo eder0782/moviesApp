@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { View, Text } from "react-native";
-import { ImageProps, Movie } from "../../@types/types";
-// import { dados } from "../../services/data.teste";
 import ListMovie from "../ListMovie";
-import { api } from "../../services/api";
-import { imageSizeListMovies } from "../../styles/defaultValues";
+import { ImageProps, Movie } from "../../../@types/types";
+// import { dados } from "../../services/data.teste";
+import { api } from "../../../services/api";
+import { imageSizeListMovies } from "../../../styles/defaultValues";
 
-const Popular: React.FC = () => {
+const NowPlayng: React.FC = () => {
   const [discoveryMovies, setDiscoveryMovies] = useState<Movie[]>([]);
   const [page, setPage] = useState(1);
   const getMovies = async () => {
-    const response = await api.get("/movie/popular", {
+    const response = await api.get("/movie/now_playing", {
       params: {
         page,
       },
@@ -28,4 +28,4 @@ const Popular: React.FC = () => {
   );
 };
 
-export default Popular;
+export default NowPlayng;

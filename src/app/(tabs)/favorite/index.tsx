@@ -1,5 +1,5 @@
 import { SafeAreaView, Text, View } from "react-native";
-import { ViewContainer } from "../../styles";
+import { ViewContainer } from "../../../styles";
 import { StatusBar } from "expo-status-bar";
 
 export default function FavotiteMovie() {
