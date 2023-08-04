@@ -2,7 +2,6 @@ import React from "react";
 import {
   Container,
   BannerMovie,
-  ContainerPoster,
   PosterMovie,
   TitleMovie,
   Rating,
@@ -12,26 +11,38 @@ import {
   TextDescription,
   ContainerDescriptionUnit,
 } from "./HeaderDetails.style";
-import { Title } from "../../../styles";
 import { View } from "react-native";
+import { useContext } from "react";
+import { MovieContext } from "../../../utilites/context/MovieContext";
 
 const HeaderDetails: React.FC = () => {
+  const { movie } = useContext(MovieContext);
   return (
     <Container>
       <View style={{ height: 260 }}>
-        <BannerMovie source={require("./image.png")} />
+        <BannerMovie
+          source={{
+            uri: `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`,
+          }}
+        />
 
-        <PosterMovie source={require("./poster.png")} />
+        <PosterMovie
+          source={{
+            uri: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+          }}
+        />
         <Rating>
           <Icons source={require("../../../assets/star.png")} />
-          <TextRating>9.5</TextRating>
+          <TextRating>{Number(movie.vote_average).toFixed(1)}</TextRating>
         </Rating>
       </View>
-      <TitleMovie>Spiderman No Way Home</TitleMovie>
+      <TitleMovie>{movie.title}</TitleMovie>
       <ContainerDescription>
         <ContainerDescriptionUnit>
           <Icons source={require("../../../assets/calendar.png")} />
-          <TextDescription>2021</TextDescription>
+          <TextDescription>
+            {String(movie.release_date).slice(0, 4)}
+          </TextDescription>
         </ContainerDescriptionUnit>
         <TextDescription>|</TextDescription>
         <ContainerDescriptionUnit>

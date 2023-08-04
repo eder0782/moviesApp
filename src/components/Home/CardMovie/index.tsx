@@ -13,12 +13,14 @@ type IProps = {
 
 const CardMovie: React.FC<IProps> = ({ data, imageSize }) => {
   const route = useRouter();
+  const { movie, setMovie } = useContext(MovieContext);
 
   return (
     <TouchableOpacity
       activeOpacity={0.6}
       onPress={() => {
-        // setMovie(data);
+        setMovie(data);
+
         route.push("/details");
       }}
     >

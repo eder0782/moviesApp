@@ -1,6 +1,5 @@
 import { StatusBar } from "expo-status-bar";
-import { ViewContainer } from "../../styles";
-import { Text } from "react-native";
+
 import HeaderDetails from "../../components/Details/HeaderDetails";
 import { View } from "react-native";
 
