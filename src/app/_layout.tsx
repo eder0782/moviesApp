@@ -19,7 +19,10 @@ export default function RootLayout() {
         <MovieProvider>
           <Stack initialRouteName="(tabs)">
             <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-            <Stack.Screen name="details" options={{ headerShown: false }} />
+            <Stack.Screen
+              name="details"
+              options={{ headerShown: false, animation: "slide_from_bottom" }}
+            />
           </Stack>
         </MovieProvider>
       </SafeAreaView>
