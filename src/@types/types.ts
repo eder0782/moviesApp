@@ -18,3 +18,20 @@ export interface Movie {
   video?: boolean;
   vote_count?: number;
 }
+
+export interface CardReviewType {
+  author: string;
+  author_details: AuthorDetailsType;
+  content: string;
+  created_at: string;
+  id: string;
+  updated_at: string;
+  url: string;
+}
+
+export interface AuthorDetailsType {
+  name: string;
+  username: string;
+  avatar_path: string;
+  rating: number;
+}
