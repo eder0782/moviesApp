@@ -3,9 +3,11 @@ import styled from "styled-components/native";
 export const ContainerReview = styled.FlatList``;
 
 export const ContainerItem = styled.View`
-  height: 110px;
+  /* height: 110px; */
   width: 100%;
   flex-direction: row;
+  flex: 1;
+  margin-bottom: 20%;
 `;
 
 export const AvatarContainer = styled.View`
@@ -31,7 +33,10 @@ export const TextReview = styled.Text`
   font-size: 15px;
   font-weight: 600;
 `;
-export const AvatarImage = styled.Image`
-  height: 44px;
-  width: 44px;
+export const AvatarImage = styled.Image.attrs((props) => ({
+  resizeMode: "contain",
+}))`
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
 `;

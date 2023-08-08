@@ -33,7 +33,9 @@ export const SearshInput = styled.TextInput.attrs((props) => ({
   } */
 `;
 
-export const ImageMovie = styled.Image`
+export const ImageMovie = styled.Image.attrs((props) => ({
+  resizeMode: "contain",
+}))`
   border-radius: 16px;
   margin-right: 20px;
 `;

@@ -22,7 +22,7 @@ const HeaderDetails: React.FC = () => {
       <View style={{ height: 260 }}>
         <BannerMovie
           source={{
-            uri: `https://image.tmdb.org/t/p/w500${movie.backdrop_path}`,
+            uri: `https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`,
           }}
         />
 
