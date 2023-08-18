@@ -57,7 +57,7 @@ const Cast: React.FC = () => {
         keyExtractor={(item, index) => "#" + item.name}
         numColumns={2}
         style={{
-          marginBottom: 50,
+          marginBottom: 120,
         }}
       >
         <Text style={{ color: "#fff" }}>LISTA DE ATORES</Text>

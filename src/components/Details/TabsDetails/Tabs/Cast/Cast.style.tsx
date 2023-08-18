@@ -9,7 +9,7 @@ export const ContainerCast = styled.FlatList.attrs((props) => ({
     // alignItems: "center",
     // justifyContent: "space-around",
     marginTop: 20,
-    marginBottom: 200,
+    // marginBottom: 200,
   },
 }))``;
 

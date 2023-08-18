@@ -13,13 +13,14 @@ type IProps = {
 
 const ListMovie: React.FC<IProps> = ({ data, imageSize }) => {
   return (
-    <Container>
+    <Container style={{ marginBottom: 50 }}>
       <FlatList
         data={data}
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{
           gap: 20,
-          marginTop: 10,
+          marginTop: 20,
+          paddingBottom: 130,
         }}
         renderItem={({ item }) => (
           <View>
@@ -28,9 +29,6 @@ const ListMovie: React.FC<IProps> = ({ data, imageSize }) => {
         )}
         keyExtractor={(item) => String(item.id)}
         numColumns={3}
-        style={{
-          marginBottom: 50,
-        }}
       />
     </Container>
   );
