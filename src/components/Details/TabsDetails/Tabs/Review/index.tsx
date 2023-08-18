@@ -66,7 +66,7 @@ const Review: React.FC = () => {
               <CardReview data={item.item} />
             </View>
           )}
-          keyExtractor={(item) => String(item.id)}
+          keyExtractor={(item: any) => String(item.id)}
           numColumns={1}
         />
       ) : (

@@ -44,23 +44,25 @@ const Cast: React.FC = () => {
     getCast();
   }, []);
   return (
-    <ContainerCast
-      data={cast}
-      showsVerticalScrollIndicator={false}
-      renderItem={(item) => (
-        <View style={{ flexDirection: "column", margin: 1 }}>
-          <CardActor data={item.item} />
-        </View>
-      )}
-      key={"#"}
-      keyExtractor={(item, index) => "#" + item.name}
-      numColumns={2}
-      style={{
-        marginBottom: 50,
-      }}
-    >
-      <Text style={{ color: "#fff" }}>LISTA DE ATORES</Text>
-    </ContainerCast>
+    <View style={{ marginBottom: 80 }}>
+      <ContainerCast
+        data={cast}
+        showsVerticalScrollIndicator={false}
+        renderItem={(item) => (
+          <View style={{ flexDirection: "column", margin: 1 }}>
+            <CardActor data={item.item} />
+          </View>
+        )}
+        key={"#"}
+        keyExtractor={(item, index) => "#" + item.name}
+        numColumns={2}
+        style={{
+          marginBottom: 50,
+        }}
+      >
+        <Text style={{ color: "#fff" }}>LISTA DE ATORES</Text>
+      </ContainerCast>
+    </View>
   );
 };
 

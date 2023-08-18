@@ -18,7 +18,7 @@ export const PosterMovie = styled.Image`
   border-radius: 16px;
   /* transform: translate(-100%, 50%); */
   transform: translateY(-70px);
-  margin-left: 30px;
+  margin-left: 8%;
   /* transform: translateX(-50px); */
 `;
 
@@ -39,7 +39,7 @@ export const Rating = styled.View`
   justify-content: center;
   align-items: center;
   transform: translateY(-200px);
-  margin-left: 340px;
+  margin-left: 80%;
   flex-direction: row;
 `;
 
