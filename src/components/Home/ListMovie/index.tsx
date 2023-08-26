@@ -3,8 +3,6 @@ import { ImageProps, Movie } from "../../../@types/types";
 import CardMovie from "../CardMovie";
 import { Container } from "./ListMovie.style";
 import { View } from "react-native";
-import { useState, useEffect } from "react";
-import { api } from "../../../services/api";
 
 type IProps = {
   imageSize: ImageProps;

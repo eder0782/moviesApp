@@ -3,6 +3,11 @@ export type ImageProps = {
   width: number;
 };
 
+type genreMovie = {
+  id: number;
+  name: string;
+};
+
 export interface Movie {
   adult?: boolean;
   id: number;
@@ -12,11 +17,13 @@ export interface Movie {
   vote_average: number;
   backdrop_path?: string;
   genre_ids?: number[];
+  genres?: genreMovie[];
   original_language?: string;
   popularity?: number;
   release_date?: string;
   video?: boolean;
   vote_count?: number;
+  runtime?: number;
 }
 
 export interface CardReviewType {

@@ -5,6 +5,7 @@ import { useRouter } from "expo-router";
 import { memo } from "react";
 import { useContext } from "react";
 import { MovieContext } from "../../../utilites/context/MovieContext";
+import { api } from "../../../services/api";
 
 type IProps = {
   imageSize: ImageProps;
@@ -13,15 +14,21 @@ type IProps = {
 
 const CardMovie: React.FC<IProps> = ({ data, imageSize }) => {
   const route = useRouter();
-  const { movie, setMovie } = useContext(MovieContext);
+  const { setMovie } = useContext(MovieContext);
+  const handleClick = async () => {
+    const response = await api.get(`movie/${data.id}`);
+
+    setMovie(response.data);
+
+    route.push("/details");
+  };
 
   return (
     <TouchableOpacity
       activeOpacity={0.6}
+      style={{ marginRight: 10 }}
       onPress={() => {
-        setMovie(data);
-
-        route.push("/details");
+        handleClick();
       }}
     >
       <ImageMovie

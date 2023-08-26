@@ -17,6 +17,7 @@ import { MovieContext } from "../../../utilites/context/MovieContext";
 
 const HeaderDetails: React.FC = () => {
   const { movie } = useContext(MovieContext);
+
   return (
     <Container>
       <View style={{ height: 260 }}>
@@ -47,12 +48,12 @@ const HeaderDetails: React.FC = () => {
         <TextDescription>|</TextDescription>
         <ContainerDescriptionUnit>
           <Icons source={require("../../../assets/clock.png")} />
-          <TextDescription>148 Minutos</TextDescription>
+          <TextDescription>{movie.runtime} Minutos</TextDescription>
         </ContainerDescriptionUnit>
         <TextDescription>|</TextDescription>
         <ContainerDescriptionUnit>
           <Icons source={require("../../../assets/ticket.png")} />
-          <TextDescription>Ação</TextDescription>
+          <TextDescription>{movie.genres?.[0].name}</TextDescription>
         </ContainerDescriptionUnit>
       </ContainerDescription>
     </Container>

@@ -37,5 +37,5 @@ export const ImageMovie = styled.Image.attrs((props) => ({
   resizeMode: "contain",
 }))`
   border-radius: 16px;
-  margin-right: 20px;
+  /* margin-right: 20px; */
 `;
